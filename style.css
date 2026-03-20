@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+/* LIGHT MODE BACKGROUND */
+
+body{
+background: linear-gradient(135deg,#f8fafc,#eef2ff);
+color:#222;
+transition:0.4s;
+}
+
+/* PAGE WRAPPER (IMPORTANT) */
+
+.page{
+transition: all 0.5s ease;
+min-height:100vh;
+}
+
+
+/* NAVBAR */
+
+header{
+background: rgba(255,255,255,0.7);
+backdrop-filter: blur(10px);
+position:sticky;
+top:0;
+z-index:100;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+max-width:1200px;
+margin:auto;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#6b5dc8;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#6c8cff;
+}
+
+
+/* HERO */
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:80px 40px;
+max-width:1200px;
+margin:40px auto;
+gap:40px;
+background: linear-gradient(135deg,#7f9cf5,#a5b4fc);
+border-radius:20px;
+color:white;
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+.hero-text h1{
+font-size:44px;
+color:#0b0b2b;
+}
+
+.hero-text h3{
+margin:15px 0;
+}
+
+.hero-text p{
+margin-bottom:20px;
+line-height:1.6;
+}
+
+.cta{
+background: linear-gradient(135deg,#4e62aa,#6c8cff);
+color:white;
+padding:12px 25px;
+border-radius:8px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.cta:hover{
+transform:translateY(-3px);
+}
+
+.hero-img img{
+width:260px;
+border-radius:50%;
+box-shadow:0 15px 35px rgba(0,0,0,0.3);
+}
+
+
+/* SECTIONS */
+
+section{
+max-width:1100px;
+margin:40px auto;
+padding:60px 25px;
+border-radius:20px;
+box-shadow:0 8px 25px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+section:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 30px rgba(0,0,0,0.1);
+}
+
+h2{
+text-align:center;
+margin-bottom:30px;
+font-size:32px;
+}
+
+
+/* SECTION COLORS */
+
+#skills{ background:#eef2ff; }
+#education{ background:#e6f4ea; }
+#hobbies{ background:#fff7ed; }
+#resume{ background:#f5f3ff; text-align:center; }
+#contact{ background:#f0f9ff; }
+
+
+/* GRID */
+
+.grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.card{
+padding:18px 30px;
+background: rgba(255,255,255,0.6);
+backdrop-filter: blur(10px);
+border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+/* EDUCATION */
+
+.education-card{
+max-width:500px;
+margin:auto;
+text-align:center;
+padding:30px;
+background: rgba(255,255,255,0.7);
+border-radius:20px;
+}
+
+
+/* RESUME */
+
+.resume-btn{
+display:inline-block;
+margin-top:20px;
+background:#4a6cf7;
+color:white;
+padding:12px 25px;
+border-radius:8px;
+text-decoration:none;
+}
+
+.resume-btn:hover{
+background:#364fc7;
+}
+
+
+/* CONTACT */
+
+.contact-card{
+text-align:center;
+padding:30px;
+background: rgba(255,255,255,0.8);
+border-radius:10px;
+}
+
+.contact-card a{
+margin:0 10px;
+text-decoration:none;
+color:#4a6cf7;
+}
+
+.contact-card a:hover{
+text-decoration:underline;
+}
+
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:25px;
+background:#111;
+color:white;
+margin-top:40px;
+}
+
+
+/* THEME TOGGLE */
+
+#theme-toggle{
+display:none;
+}
+
+.theme-btn{
+cursor:pointer;
+font-size:20px;
+position:relative;
+}
+
+/* ICON SWITCH */
+
+.theme-btn .sun{ display:none; }
+
+#theme-toggle:checked ~ .page .theme-btn .moon{
+display:none;
+}
+
+#theme-toggle:checked ~ .page .theme-btn .sun{
+display:inline;
+}
+
+
+/* 🌙 DARK MODE */
+
+/* FULL BACKGROUND (OPAQUE BLACK GRADIENT) */
+
+#theme-toggle:checked ~ .page{
+background: linear-gradient(
+135deg,
+rgba(0,0,0,0.92),
+rgba(2,6,23,0.95),
+rgba(15,23,42,0.95),
+rgba(0,0,0,0.92)
+);
+color:#f1f1f1;
+}
+
+
+/* NAVBAR */
+
+#theme-toggle:checked ~ .page header{
+background:#1e1e1e;
+}
+
+
+/* SECTIONS */
+
+#theme-toggle:checked ~ .page section{
+color:#f1f1f1;
+}
+
+#theme-toggle:checked ~ .page #skills{ background:#c9adc6; }
+#theme-toggle:checked ~ .page #education{ background:#b9bf99; }
+#theme-toggle:checked ~ .page #hobbies{ background:#6d94a0; }
+#theme-toggle:checked ~ .page #resume{ background:#8e7a7a; }
+#theme-toggle:checked ~ .page #contact{ background:#829589; }
+
+
+/* GLASS CARDS */
+
+#theme-toggle:checked ~ .page .card,
+#theme-toggle:checked ~ .page .education-card,
+#theme-toggle:checked ~ .page .contact-card{
+background: rgba(20,20,20,0.7);
+backdrop-filter: blur(12px);
+color:white;
+}
+
+
+/* NAV LINKS */
+
+#theme-toggle:checked ~ .page nav a{
+color:white;
+}
+
+#theme-toggle:checked ~ .page nav a:hover{
+color:#6c8cff;
+}
+
+
+/* FOOTER */
+
+#theme-toggle:checked ~ .page footer{
+background:#000;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+nav ul{
+display:none;
+}
+
+}
